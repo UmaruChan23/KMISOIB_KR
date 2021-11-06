@@ -16,10 +16,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.6'
     implementation('org.hibernate:hibernate-validator:7.0.1.Final')
-    developmentOnly 'org.springframework.boot:spring-boot-devtools:2.5.5'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools:2.5.6'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
 }
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'KmisoibKrApplication.java'
+        )
+    }
 }
