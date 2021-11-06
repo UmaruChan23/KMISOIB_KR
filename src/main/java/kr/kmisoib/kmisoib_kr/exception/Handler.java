@@ -17,4 +17,9 @@ public class Handler {
     public ResponseEntity<String> handleDataException() {
         return ResponseEntity.badRequest().body("Неверный формат данных");
     }
+
+    @ExceptionHandler(StringIndexOutOfBoundsException.class)
+    public ResponseEntity<String> handleLengthException() {
+        return ResponseEntity.badRequest().body("Неверная длина сообщения или ключа");
+    }
 }
