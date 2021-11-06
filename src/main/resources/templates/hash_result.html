@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hash</title>
+    <link href="../static/css/rsa.css" th:href="@{/css/rsa.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="result">
+    <table>
+        <tbody>
+        <tr>
+            <td> Hash:</td>
+            <td th:text="${result}"></td>
+        </tr>
+        <tr>
+            <td> p:</td>
+            <td th:text="${hash.p}"></td>
+        </tr>
+        <tr>
+            <td> q:</td>
+            <td th:text="${hash.q}"></td>
+        </tr>
+        <tr>
+            <td> n:</td>
+            <td th:text="${hash.h0}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <form action="/" target="_parent">
+        <button>Главная</button>
+    </form>
+</div>
+</body>
+</html>

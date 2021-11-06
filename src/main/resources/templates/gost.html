@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ГОСТ</title>
+    <link href="../static/css/cipher.css" th:href="@{/css/cipher.css}" rel="stylesheet" />
+</head>
+<body>
+<div id="encryption_form">
+    <form method="post" th:action="@{/gost}" th:object="${encryptionForm}">
+        <input id="firstName" placeholder="Текст" required type="text" th:field="*{text}"/>
+        <input id="lastName" placeholder="Ключ" required type="text" th:field="*{key}"/>
+        <input type="submit" value="Зашифровать">
+    </form>
+</div>
+</body>
+</html>

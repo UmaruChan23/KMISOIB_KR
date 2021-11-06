@@ -1,0 +1,38 @@
+html {
+    background: url("../index_back.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#content_table {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    opacity: 0.95;
+    height: 100%;
+    width: 500px;
+}
+
+#content_table table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-right: none;
+    line-height: 3em;
+}
+
+#content_table table form button {
+    height: 75px;
+    width: 500px;
+    background: #dddddd;
+    font-size: large;
+}
+
+#content_table table form button:hover {
+    height: 75px;
+    width: 500px;
+    background: cyan;
+}

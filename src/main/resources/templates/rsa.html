@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Электронная цифровая подпись</title>
+    <link href="../static/css/cipher.css" th:href="@{/css/cipher.css}" rel="stylesheet" />
+</head>
+<body>
+<div id="encryption_form">
+    <form method="post" th:action="@{/rsa}" th:object="${rsaForm}">
+        <input id="p" placeholder="p" required type="text" th:field="*{p}"/>
+        <input id="q" placeholder="q" required type="text" th:field="*{q}"/>
+        <input id="text" placeholder="text" required type="text" th:field="*{text}"/>
+        <input type="submit" value="Зашифровать">
+    </form>
+</div>
+</body>
+</html>

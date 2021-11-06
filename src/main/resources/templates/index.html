@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="content_table">
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <form action="/des" target="_parent">
+                    <button>Алгоритм шифрования DES</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="/gost" target="_parent">
+                    <button>Алгоритм шифрования ГОСТ28147-89</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="/rsa" target="_parent">
+                    <button>Алгоритм шифрования RSA</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="/hash" target="_parent">
+                    <button>Функция хэширования</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="/ecp" target="_parent">
+                    <button>Электронная цифровая подпись</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

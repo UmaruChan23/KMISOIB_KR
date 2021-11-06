@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/html">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DES</title>
+    <link href="../static/css/des_result.css" th:href="@{/css/des_result.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="content_table">
+    <h1> Результат шифрования в двоичном виде:</h1>
+    <h1 th:text="${encrypted}"></h1>
+    <form action="/" target="_parent">
+        <button>Главная</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

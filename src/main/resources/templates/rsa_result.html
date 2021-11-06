@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Электронная цифровая подпись</title>
+    <link href="../static/css/rsa.css" th:href="@{/css/rsa.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="result">
+    <table>
+        <tbody>
+        <tr>
+            <td> Зашифрованный текст:</td>
+            <td th:text="${result}"></td>
+        </tr>
+        <tr>
+            <td> p:</td>
+            <td th:text="${rsa.p}"></td>
+        </tr>
+        <tr>
+            <td> q:</td>
+            <td th:text="${rsa.q}"></td>
+        </tr>
+        <tr>
+            <td> n:</td>
+            <td th:text="${rsa.n}"></td>
+        </tr>
+        <tr>
+            <td> phi:</td>
+            <td th:text="${rsa.phi}"></td>
+        </tr>
+        <tr>
+            <td> e:</td>
+            <td th:text="${rsa.e}"></td>
+        </tr>
+        <tr>
+            <td> d:</td>
+            <td th:text="${rsa.d}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <form action="/" target="_parent">
+        <button>Главная</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+html {
+    background: url("../index_back.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#content_table {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    height: 25%;
+    width: 600px;
+    background: #dddddd;
+}
+
+#content_table h1 {
+    height: 75px;
+    width: 100%;
+    background: #dddddd;
+    font-size: large;
+}
+
+#content_table a {
+    position: center;
+    height: 75px;
+    width: 100%;
+    background: blue;
+    font-size: large;
+}
+
+#content_table form button {
+    position: center;
+    height: 50px;
+    width: 200px;
+    background: #dddddd;
+    font-size: large;
+}
