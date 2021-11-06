@@ -1,6 +1,6 @@
 FROM openjdk:15-alpine
 
-COPY ./KMISOIB_KR-0.0.1-SNAPSHOT-plain.jar /opt/kr.jar
+COPY ./KMISOIB_KR-0.0.1-SNAPSHOT.jar /opt/kr.jar
 
 ENV PORT 5000
 
