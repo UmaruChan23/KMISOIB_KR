@@ -6,31 +6,39 @@ html {
     background-size: cover;
 }
 
-#content_table {
+#result {
     position: absolute;
-    left: 40%;
-    top: 40%;
-    height: 25%;
-    width: 600px;
-    background: #dddddd;
+    left: 45%;
+    top: 35%;
+    opacity: 0.95;
+    height: 100%;
+    width: 1000px;
 }
 
-#content_table h1 {
-    height: 75px;
+#result table{
+    border: 1px solid #eee;
+    table-layout: auto;
     width: 100%;
-    background: #dddddd;
-    font-size: large;
+    margin-bottom: 20px;
 }
-
-#content_table a {
-    position: center;
-    height: 75px;
-    width: 100%;
-    background: blue;
-    font-size: large;
+#result table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
 }
-
-#content_table form button {
+#result table td{
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+#result table tbody tr:nth-child(odd){
+    background: #fff;
+}
+#result table tbody tr:nth-child(even){
+    background: #F7F7F7;
+}
+#result form button {
     position: center;
     height: 50px;
     width: 200px;

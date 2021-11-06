@@ -7,6 +7,7 @@
     <link href="../static/css/cipher.css" th:href="@{/css/cipher.css}" rel="stylesheet" />
 </head>
 <body>
+<h1>Алгоритм шифрования DES</h1>
 <div id="encryption_form">
     <form method="post" th:action="@{/des}" th:object="${encryptionForm}">
         <input id="text" placeholder="Текст" required type="text" th:field="*{text}"/> <br>

@@ -7,6 +7,7 @@
     <link href="../static/css/cipher.css" th:href="@{/css/cipher.css}" rel="stylesheet" />
 </head>
 <body>
+<h1>Алгоритм шифрования RSA</h1>
 <div id="encryption_form">
     <form method="post" th:action="@{/rsa}" th:object="${rsaForm}">
         <input id="p" placeholder="p" required type="text" th:field="*{p}"/>

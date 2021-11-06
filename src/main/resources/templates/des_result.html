@@ -7,9 +7,63 @@
     <link href="../static/css/des_result.css" th:href="@{/css/des_result.css}" rel="stylesheet"/>
 </head>
 <body>
-<div id="content_table">
-    <h1> Результат шифрования в двоичном виде:</h1>
-    <h1 th:text="${encrypted}"></h1>
+<div id="result">
+    <table>
+        <tbody>
+        <tr>
+            <td>Сообщение в двоичном виде</td>
+            <td th:text="${des.binary}"></td>
+        </tr>
+        <tr>
+            <td>Ключ в двоичном виде</td>
+            <td th:text="${des.binaryKey}"></td>
+        </tr>
+        <tr>
+            <td>Сообщение после первой перестановки</td>
+            <td th:text="${des.permuteBinary}"></td>
+        </tr>
+        <tr>
+            <td>Левая часть</td>
+            <td th:text="${des.left}"></td>
+        </tr>
+        <tr>
+            <td>Правая часть</td>
+            <td th:text="${des.right}"></td>
+        </tr>
+        <tr>
+            <td>Расширенная правая часть</td>
+            <td th:text="${des.extendR}"></td>
+        </tr>
+        <tr>
+            <td>Сокращенный ключ</td>
+            <td th:text="${des.droppedBinaryKey}"></td>
+        </tr>
+        <tr>
+            <td>Сумма ключа и правой части</td>
+            <td th:text="${des.sum}"></td>
+        </tr>
+        <tr>
+            <td>Перестановка по S блокам</td>
+            <td th:text="${des.substitute}"></td>
+        </tr>
+        <tr>
+            <td>Перестановка по P блоку</td>
+            <td th:text="${des.secondPermute}"></td>
+        </tr>
+        <tr>
+            <td>Суммирование по модулю 2 левой и правой части</td>
+            <td th:text="${des.secondSum}"></td>
+        </tr>
+        <tr>
+            <td>Соединение левой и правой части</td>
+            <td th:text="${des.LR}"></td>
+        </tr>
+        <tr>
+            <td>Зашифрованный текст</td>
+            <td th:text="${encrypted}"></td>
+        </tr>
+        </tbody>
+    </table>
     <form action="/" target="_parent">
         <button>Главная</button>
     </form>

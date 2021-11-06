@@ -107,11 +107,23 @@ public class DES {
             22, 11, 4, 25
     };
 
-    /** текст */
+    //текст
     private final String text;
 
     /** Ключ */
     private final String key;
+    private String binary;
+    private String permuteBinary;
+    private String left;
+    private String right;
+    private String extendR;
+    private String binaryKey;
+    private String droppedBinaryKey;
+    private String sum;
+    private String substitute;
+    private String secondPermute;
+    private String secondSum;
+    private String LR;
 
     public DES(String text, String key) {
         this.text = text;
@@ -119,20 +131,20 @@ public class DES {
     }
 
     public String encrypt() throws SymbolException {
-        String binary = stringToBinary(text);
-        String permuteBinary = permute(binary, IP);
+        binary = stringToBinary(text);
+        permuteBinary = permute(binary, IP);
         // Левая часть ключа
-        String left = permuteBinary.substring(0, permuteBinary.length() / 2);
+        left = permuteBinary.substring(0, permuteBinary.length() / 2);
         // Правая часть ключа
-        String right = permuteBinary.substring(permuteBinary.length() / 2);
-        String extendR = extend(right);
-        String binaryKey = stringToBinary(key);
-        String droppedBinaryKey = dropKeyBits(binaryKey);
-        String sum = xor(extendR, droppedBinaryKey);
-        String substitute = subSBlock(sum);
-        String secondPermute = permute(substitute, P);
-        String secondSum = xor(secondPermute, left);
-        String LR = right + secondSum;
+        right = permuteBinary.substring(permuteBinary.length() / 2);
+        extendR = extend(right);
+        binaryKey = stringToBinary(key);
+        droppedBinaryKey = dropKeyBits(binaryKey);
+        sum = xor(extendR, droppedBinaryKey);
+        substitute = subSBlock(sum);
+        secondPermute = permute(substitute, P);
+        secondSum = xor(secondPermute, left);
+        LR = right + secondSum;
         return permute(LR, IP_REVERS);
     }
 
@@ -234,5 +246,61 @@ public class DES {
             result.append(Integer.toBinaryString(Alphabet.getCode(ch)));
         }
         return result.toString();
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public String getBinary() {
+        return binary;
+    }
+
+    public String getPermuteBinary() {
+        return permuteBinary;
+    }
+
+    public String getLeft() {
+        return left;
+    }
+
+    public String getRight() {
+        return right;
+    }
+
+    public String getExtendR() {
+        return extendR;
+    }
+
+    public String getBinaryKey() {
+        return binaryKey;
+    }
+
+    public String getDroppedBinaryKey() {
+        return droppedBinaryKey;
+    }
+
+    public String getSum() {
+        return sum;
+    }
+
+    public String getSubstitute() {
+        return substitute;
+    }
+
+    public String getSecondPermute() {
+        return secondPermute;
+    }
+
+    public String getSecondSum() {
+        return secondSum;
+    }
+
+    public String getLR() {
+        return LR;
     }
 }

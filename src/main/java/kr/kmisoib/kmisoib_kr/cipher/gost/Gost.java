@@ -29,11 +29,20 @@ public class Gost {
 
     private final CipherService service = new CipherService();
 
-    /** текст */
+    //текст
     private final String text;
 
-    /** Ключ */
+    //ключ
     private final String key;
+
+    private String binaryMessage;
+    private String left;
+    private String right;
+    private String binaryKey;
+    private String afterF;
+    private String sub;
+    private String afterShift;
+    private String substituteLF;
 
     public Gost(String text, String key) {
         this.text = text;
@@ -41,17 +50,17 @@ public class Gost {
     }
 
     public String encrypt() throws SymbolException {
-        String binaryMessage = service.stringToBinary(text);
+        binaryMessage = service.stringToBinary(text);
         // Левая часть сообщения
-        String left = binaryMessage.substring(0, binaryMessage.length() / 2);
+        left = binaryMessage.substring(0, binaryMessage.length() / 2);
         // Правая часть сообщения
-        String right = binaryMessage.substring(binaryMessage.length() / 2);
+        right = binaryMessage.substring(binaryMessage.length() / 2);
         // Ключ
-        String binaryKey = service.stringToBinary(key);
-        String afterF = f(right, binaryKey);
-        String sub = substitute(afterF);
-        String afterShift = shift(sub);
-        String substituteLF = service.xor(left, afterShift);
+        binaryKey = service.stringToBinary(key);
+        afterF = f(right, binaryKey);
+        sub = substitute(afterF);
+        afterShift = shift(sub);
+        substituteLF = service.xor(left, afterShift);
         return right + substituteLF;
     }
 
@@ -99,4 +108,75 @@ public class Gost {
         return service.toBinaryString(result);
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public String getBinaryMessage() {
+        return binaryMessage;
+    }
+
+    public void setBinaryMessage(String binaryMessage) {
+        this.binaryMessage = binaryMessage;
+    }
+
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
+
+    public String getRight() {
+        return right;
+    }
+
+    public void setRight(String right) {
+        this.right = right;
+    }
+
+    public String getBinaryKey() {
+        return binaryKey;
+    }
+
+    public void setBinaryKey(String binaryKey) {
+        this.binaryKey = binaryKey;
+    }
+
+    public String getAfterF() {
+        return afterF;
+    }
+
+    public void setAfterF(String afterF) {
+        this.afterF = afterF;
+    }
+
+    public String getSub() {
+        return sub;
+    }
+
+    public void setSub(String sub) {
+        this.sub = sub;
+    }
+
+    public String getAfterShift() {
+        return afterShift;
+    }
+
+    public void setAfterShift(String afterShift) {
+        this.afterShift = afterShift;
+    }
+
+    public String getSubstituteLF() {
+        return substituteLF;
+    }
+
+    public void setSubstituteLF(String substituteLF) {
+        this.substituteLF = substituteLF;
+    }
 }

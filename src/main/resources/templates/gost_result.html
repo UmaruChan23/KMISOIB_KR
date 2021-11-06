@@ -7,9 +7,47 @@
     <link href="../static/css/des_result.css" th:href="@{/css/des_result.css}" rel="stylesheet"/>
 </head>
 <body>
-<div id="content_table">
-    <h1> Результат шифрования в двоичном виде:</h1>
-    <h1 th:text="${encrypted}"></h1>
+<div id="result">
+    <table>
+        <tbody>
+        <tr>
+            <td>Сообщение в двоичном виде</td>
+            <td th:text="${gost.binaryMessage}"></td>
+        </tr>
+        <tr>
+            <td>Ключ в двоичном виде</td>
+            <td th:text="${gost.binaryKey}"></td>
+        </tr>
+        <tr>
+            <td>Левая часть сообщения</td>
+            <td th:text="${gost.left}"></td>
+        </tr>
+        <tr>
+            <td>Правая часть сообщения</td>
+            <td th:text="${gost.right}"></td>
+        </tr>
+        <tr>
+            <td>f(R0,X0)</td>
+            <td th:text="${gost.afterF}"></td>
+        </tr>
+        <tr>
+            <td>После подстановки</td>
+            <td th:text="${gost.sub}"></td>
+        </tr>
+        <tr>
+            <td>Сдвиг на 11 бит влево</td>
+            <td th:text="${gost.afterShift}"></td>
+        </tr>
+        <tr>
+            <td>Сумма по модулю 2 f и L0</td>
+            <td th:text="${gost.substituteLF}"></td>
+        </tr>
+        <tr>
+            <td>Зашифрованный текст</td>
+            <td th:text="${encrypted}"></td>
+        </tr>
+        </tbody>
+    </table>
     <form action="/" target="_parent">
         <button>Главная</button>
     </form>

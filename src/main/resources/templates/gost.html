@@ -7,6 +7,7 @@
     <link href="../static/css/cipher.css" th:href="@{/css/cipher.css}" rel="stylesheet" />
 </head>
 <body>
+<h1>Алгоритм шифрования ГОСТ28147-89</h1>
 <div id="encryption_form">
     <form method="post" th:action="@{/gost}" th:object="${encryptionForm}">
         <input id="firstName" placeholder="Текст" required type="text" th:field="*{text}"/>

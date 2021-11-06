@@ -23,6 +23,7 @@ public class GOSTController {
     public String getCode(BasicEncryptionForm form, Model model) throws SymbolException {
         Gost gost = new Gost(form.getText(), form.getKey());
         model.addAttribute("encrypted", gost.encrypt());
+        model.addAttribute("gost", gost);
         return "gost_result";
     }
 

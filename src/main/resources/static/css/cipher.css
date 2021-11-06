@@ -6,6 +6,14 @@ html {
     background-size: cover;
 }
 
+body h1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    left: 50%;
+    background: #dddddd;
+}
+
 #encryption_form {
     position: absolute;
     left: 50%;
@@ -21,4 +29,29 @@ html {
     font-size: large;
     margin-bottom: 5px;
 }
+
+#result table{
+    border: 1px solid #eee;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#result table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+}
+#result table td{
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+#result table tbody tr:nth-child(odd){
+    background: #fff;
+}
+#result table tbody tr:nth-child(even){
+    background: #F7F7F7;
+}
+
 
