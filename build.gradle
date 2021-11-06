@@ -27,7 +27,7 @@ test {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'KmisoibKrApplication.java'
+                'Main-Class': 'KmisoibKrApplication'
         )
     }
 }
