@@ -24,6 +24,11 @@ public class Handler {
     }
 
     @ExceptionHandler(ArrayIndexOutOfBoundsException.class)
+    public ResponseEntity<String> handleArrayIndexOutOfBoundsException() {
+        return ResponseEntity.badRequest().body("Неверная длина сообщения или ключа");
+    }
+
+    @ExceptionHandler(IndexOutOfBoundsException.class)
     public ResponseEntity<String> handleIndexOutOfBoundsException() {
         return ResponseEntity.badRequest().body("Неверная длина сообщения или ключа");
     }
